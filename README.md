@@ -10,10 +10,10 @@ This repo is my own toy Pharma factory simulator.
 Simulation of toy Plant with monitors
 
 ## Vessel process durations - Time Bottleneck
-![vessel_process_duration.png](example/vessel_process_duration.png)
+![equipment_production_duration.png](example/equipment_production_duration.png)
 
 ## Gant Chart for timing 
-![gantChart.png](example/gantChart.png)
+![campaign_gant_chart.png](example/campaign_gant_chart.png)
 
 ## Comparing different factory layouts
-![ChangePlant.png](example/ChangePlant.png)
+![process_durations_plant_variations.png](example/process_durations_plant_variations.png)

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .factory.plants import biomanufacturing_plant
+from .factory.plant import biomanufacturing_plant
 
 
 

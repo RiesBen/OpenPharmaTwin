@@ -1,10 +1,13 @@
+import pandas as pd
 
-from .compartments import factory
-def run_campaign_on_factory(env, campaign, plant:factory, num_runs=10): #Simulation Control
+from .factory.plants import biomanufacturing_plant
+
+
+
+def run_campaign_on_factory(env, campaign, plant:biomanufacturing_plant, monitor, num_runs=10): #Simulation Control
     for run in range(num_runs):
-        env.process(campaign(env, run, plant))
+        env.process(campaign(env, run, plant, monitor))
         yield env.timeout(0)  # Wait a bit before generating a new person
-
 
 class Monitor:
     def __init__(self, env):

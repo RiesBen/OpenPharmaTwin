@@ -1,0 +1,39 @@
+[workspace]
+name = "open_pharma_twin"
+version = "0.1.0"
+description = "A Pixi-based Python project"
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+readme = "README.md"
+authors = ["Benjamin Ries" ]
+
+
+[pypi-dependencies]
+open_pharma_twin = { path = ".", editable = true }
+
+[dependencies]
+python = "3.11.*"
+pytest = "*"
+
+# Optional: development dependencies
+[tool.pixi.dependencies]
+pytest = "*"
+ruff = "*"
+mypy = "*"
+
+[feature.build.dependencies]
+python = "3.9.*"
+
+[feature.debug.dependencies]
+debugpy = "*"
+
+[environments]
+build = {features = ["build"], no-default-feature = true}
+debug = {features = ["debug"]}
+
+
+[tasks]
+run = { cmd = "pyhthon -m open_pharma_twin" }
+test = { cmd = "pytest" }
+lint = { cmd = "ruff check src" }
+typecheck = { cmd = "mypy src" }
